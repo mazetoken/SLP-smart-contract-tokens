@@ -50,9 +50,9 @@ let balances;
 
   // 2) Select decimal precision for this new token
   let decimals = 2;
-  let name = "Fake Uni";
-  let ticker = "FUNI";
-  let documentUri = "https://signup.cash";
+  let name = "MAZE-REBEL";
+  let ticker = "REBEL";
+  let documentUri = "https://mazetoken.github.io";
   let documentHash = null;
   let initialTokenQty = 1;
 

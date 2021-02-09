@@ -13,7 +13,6 @@ contract Yield(bytes20 premiumPkh, bytes tokenIdHex) {
       int minPremium = 1000;
       int satsToBeMinted = 546;
       int satsLockedInForBaton = 546;
-      int dust = 546;
 
       require(premium >= minPremium);
  
@@ -23,7 +22,7 @@ contract Yield(bytes20 premiumPkh, bytes tokenIdHex) {
         bytes('MINT'),
         tokenIdHex,
         0x03, // minting baton vout (very important to avoid burning the baton)
-        0x00000000000061A8 // 250 SLPs (considering 2 decimals)
+        0x00000000000186A0 // 1000 SLPs (considering 2 decimals)
       ]);
 
       // minted token sent back to the farmer

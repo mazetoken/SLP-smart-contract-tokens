@@ -15,7 +15,6 @@ const { tokenId } = require("./config");
 (async () => {
   // Initialise BITBOX
   const bitbox = new BITBOX();
-  const DUST = 546;
   const premiumAmount = 1000; // 1000 satoshi investment to premium
   const hardCodedFee = 1200;
 
@@ -54,7 +53,7 @@ const { tokenId } = require("./config");
   const aliceBalance = aliceUtxos.reduce((sum, x) => sum + x.satoshis, 0);
   const totalPayments = premiumAmount + 546 + hardCodedFee;
 
-  console.log("alice balance =>", aliceBalance);
+  console.log("Alice balance =>", aliceBalance);
 
   if (aliceBalance > 10000) {
     console.log(
@@ -63,12 +62,12 @@ const { tokenId } = require("./config");
     return;
   }
 
-  // minimum 1200 should be paid to premium as investment
-  // 1000 will be hard coded tx fee
+  // minimum 1000 should be paid to premium as investment
+  // 1200 will be hard coded tx fee
   // 546 will be used for freshly minted tokens
   if (aliceBalance < totalPayments) {
     console.log(
-      "Alice balance is %s please send some money to alice address",
+      "Alice balance is %s please send 0.00004000 BCH to Alice address",
       aliceBalance
     );
     return;
@@ -101,7 +100,7 @@ const { tokenId } = require("./config");
       "MINT", // Action
       `0x${tokenId}`, // Token ID
       "0x03", // Minting baton vout
-      "0x00000000000061A8", // mint 250 new tokens (considering 2 decimals)
+      "0x00000000000186A0", // mint 1000 new tokens (considering 2 decimals)
     ])
     .to(aliceBchAddr, 546) // freshly minted tokens
     .to(premiumBchAddr, premiumAmount)

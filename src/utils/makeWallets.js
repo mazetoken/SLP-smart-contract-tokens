@@ -30,7 +30,7 @@ function makeAliceWallet() {
   const seedForAlice = bitbox.Mnemonic.toSeed(mnemonicAlice);
 
   const hdNode = bitbox.HDNode.fromSeed(seedForAlice);
-  const aliceHdNode = bitbox.HDNode.derive(hdNode, 0);
+  const aliceHdNode = bitbox.HDNode.derivePath(hdNode, "m/44'/245'/0'/0/0");
   const aliceKeyPair = bitbox.HDNode.toKeyPair(aliceHdNode);
 
   // Derive alice's public key and public key hash
