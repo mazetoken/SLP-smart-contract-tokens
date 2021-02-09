@@ -1,4 +1,4 @@
-## REBEL (MAZE-REBEL)
+## REBEL (MAZE-REBEL) by [MAZE SLP Token](https://mazetoken.github.io)
 
 Token id:4b42d3f9c9aa48b78efc1fc05d4c92314352409d387880e5803358522a33e968
 
@@ -12,7 +12,7 @@ _Read the article about "Yield Farming Bitcoin Cash Contract" by [p0oker](https:
 
 The main difference between this repository and the root repository is that I had to make the code to use nodejs CJS Loader instead ES Module Loader, change derivationPath for Alice wallet, change token variables for minting REBEL. Some npm packages are updated too. Thanks to p0oker for his assistance.
 
-_This is for educational purposes. Use it at your own risk. To create a token like REBEL try the root repository first (you need to change variables in genesis.js and in config.js)._
+_This is for educational purposes. Use it at your own risk. To create a token like REBEL try the root repository first (you need to change variables in genesis.js and in src/config.js)._
 
 ## Tutorial:
 
@@ -32,17 +32,17 @@ _This is for educational purposes. Use it at your own risk. To create a token li
 
 - you will see Premium BCH address, Alice BCH address and contract BCH address
 
-- send 0.00004000 to Alice BCH address (this is your wallet) from another wallet (do not send more than 0.00004000)
+- send 0.00004000 BCH to Alice BCH address (this is your wallet) from another wallet (do not send more than 0.00004000 BCH)
 
 - run the command again:
 
 `node src/yieldFarming.js`
 
-- you will see contract working and 1000 REBEL will be sent to your wallet (you can check it in explorer.bitcoin.com)
+- you will see contract working and 1000 REBEL will be sent to your wallet (you can check it in [explorer](https://explorer.bitcoin.com))
 
 - you can use wallet.fullstack.cash to import your passphrase (mnemonic) - you will get your private key from there and then you can copy it and paste, while creating a new wallet, in Electron Cash SLP wallet or another wallet that uses m/44'/245'/0'/0/0 derivation path
 
-- to mint another 1000 REBEL type `node src/yieldFarming.js` and send 0.00004000 to Alice BCH address and then type again `node src/yieldFarming.js` (repeat this step to mint more tokens)
+- to mint another 1000 REBEL type `node src/yieldFarming.js` and send 0.00004000 BCH to Alice BCH address and then type again `node src/yieldFarming.js` (repeat this step to mint more tokens)
 
 ### Smart contract fees:
 
