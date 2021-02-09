@@ -4,13 +4,13 @@ Token id:4b42d3f9c9aa48b78efc1fc05d4c92314352409d387880e5803358522a33e968
 
 Mint amount: 1000 REBEL
 
-REBEL is a smart contract SLP token. The token minting baton is stored in a contract that has the ability to mint REBEL tokens. This is another way to distribute SLP tokens in a decentralized, permissionless way. The code is based on [CashScript] (https://cashscript.org/)
+REBEL is a smart contract SLP token. The token minting baton is stored in a contract that has the ability to mint REBEL tokens. This is another way to distribute SLP tokens in a decentralized, permissionless way. The code is based on [CashScript](https://cashscript.org/)
 
 _This repository is forked from https://github.com/p0o/yield-farming-bch-smart-contract_
 
-_Read the article about "Yield Farming Bitcoin Cash Contract" by [p0oker] (https://read.cash/@p0oker/yield-farming-in-bitcoin-cash-a-practical-guide-2eecbc74)_
+_Read the article about "Yield Farming Bitcoin Cash Contract" by [p0oker](https://read.cash/@p0oker/yield-farming-in-bitcoin-cash-a-practical-guide-2eecbc74)_
 
-The main difference between this repository and the root repository is that I had to make the code to use nodejs CJS_Loader instead ES_Loader, change derivationPath for Alice wallet, change token variables for minting REBEL. Some npm packages are updated too. Thanks to p0oker for his assistance.
+The main difference between this repository and the root repository is that I had to make the code to use nodejs CJS Loader instead ES Module Loader, change derivationPath for Alice wallet, change token variables for minting REBEL. Some npm packages are updated too. Thanks to p0oker for his assistance.
 
 _This is for educational purposes. Use it at your own risk. To create a token like REBEL try the root repository first (you need to change variables in genesis.js and in config.js)._
 
@@ -54,7 +54,7 @@ _This is for educational purposes. Use it at your own risk. To create a token li
 
 -----------------------------------------------------------------------------------------
 
-### _This is from root repository:_
+#### _This is from root repository:_
 
 ## Yield Farming Bitcoin Cash Contract
 
