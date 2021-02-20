@@ -24,7 +24,7 @@ _This is for educational purposes. Use it at your own risk. To create a token li
 
 - open unzipped (yield-farming-bch-smart-contract) folder, go to src folder, open config.js in your favourite editor (eg. notepad) and type random 12 words passphrase (mnemonic) for your wallet in mnemonicAlice line (the wallet will be generated for you by the script - the derivation path is set to m/44'/245'/0'/0/0). Save the file (do not change anything else)
 
-_*You may notice a mnemonic for premium wallet - do not bother to recover a wallet with that phrase - it will not work)_
+_*You may notice a mnemonic for premium wallet - do not bother to recover a wallet with that phrase - it will not work_
 
 - open a command line (cmd or PowerShell), navigate to your yield-farming-bch-smart-contract directory (you have downloaded and unzipped) and type commands:
 
@@ -50,7 +50,7 @@ _*Igonore warnings/errors (keccak ..., secp256k1 ...)_
 
 - create a new Electron Cash SLP wallet or another wallet that uses m/44'/245'/0'/0/0 derivation path, by importing Alice private key - WIF (you have saved before)
 
-_To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00001000 BCH) to Alice wallet first and than you can withdraw tokens to another wallet_
+_To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00000600 BCH) to Alice wallet first and than you can withdraw tokens to another wallet_
 
 _*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazeslptoken)_
 
