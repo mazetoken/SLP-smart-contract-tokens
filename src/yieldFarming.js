@@ -23,10 +23,10 @@ const { tokenId } = require("./config");
   const { premiumPkh, premiumBchAddr } = makePremiumWallet();
 
   // This is alice address, the hypothethical end-user
-  const { alicePk, alicePkh, aliceBchAddr, aliceKeyPair } = makeAliceWallet();
+  const { alicePk, alicePkh, aliceBchAddr, aliceKeyPair, aliceCompressedWif } = makeAliceWallet();
 
-  console.log("Premium address =>", premiumBchAddr);
   console.log("Alice address =>", aliceBchAddr);
+  console.log("Alice private key WIF =>", aliceCompressedWif);
 
   // Compile the P2PKH contract to an artifact object
   const artifact = CashCompiler.compileFile(
@@ -67,7 +67,7 @@ const { tokenId } = require("./config");
   // 546 will be used for freshly minted tokens
   if (aliceBalance < totalPayments) {
     console.log(
-      "Alice balance is %s please send 0.00004000 BCH to Alice address",
+      "Alice balance is %s please send 0.00003600 BCH to Alice address",
       aliceBalance
     );
     return;
