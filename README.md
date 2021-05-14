@@ -66,7 +66,7 @@ _*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazesl
 
 - type command: `node src/yieldFarming.js`
 
-_* defaul amount is 1000 SLP tokens with 2 decimals. You can change that in ... (convert decimals to hexadecimals) and then change DECIMALS in .env file_
+_* defaul amount is 1000 SLP tokens with 2 decimals. You can change that in yieldFarming.js line 104 and yieldFarming.cash line 25 (convert amount with decimals to hexadecimals) and then change DECIMALS in .env file_
 
 -----------------------------------------------------------------------------------------
 
