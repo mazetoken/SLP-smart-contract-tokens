@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const BITBOXSDK = require("bitbox-sdk");
 const BigNumber = require("bignumber.js");
 const slpjs = require("slpjs");
@@ -6,16 +8,14 @@ const {
   Contract,
   SignatureTemplate,
   Transaction,
-  CashCompiler,
   ElectrumNetworkProvider,
 } = require("cashscript");
+const { compileFile } = require ("cashc");
 const path = require("path");
 const { makePremiumWallet } = require("./utils/makeWallets");
 
 // FOR MAINNET UNCOMMENT
-const BITBOX = new BITBOXSDK.BITBOX({
-  restURL: "https://rest.bitcoin.com/v2/",
-});
+const BITBOX = new BITBOXSDK.BITBOX({ restURL: process.env.REST_URL });
 
 const {
   premiumBchAddr,
@@ -40,19 +40,19 @@ let balances;
   console.log("Premium address:", premiumBchAddr);
   console.log("BCH balance:", balances.satoshis_available_bch);
 
-  if (balances.satoshis_available_bch < 3000) {
+  if (balances.satoshis_available_bch < 1000) {
     console.log(
       "Funding address does not have enough balance! Please send some bch there first => ",
       premiumBchAddr
     );
     return;
-  }
+}
 
   // 2) Select decimal precision for this new token
-  let decimals = 2;
-  let name = "Fake Uni";
-  let ticker = "FUNI";
-  let documentUri = "https://signup.cash";
+  let decimals = process.env.DECIMALS;
+  let name = process.env.NAME;
+  let ticker = process.env.SYMBOL;
+  let documentUri = process.env.DOC_URL;
   let documentHash = null;
   let initialTokenQty = 1;
 
@@ -83,7 +83,7 @@ let balances;
   console.log("[Progress] Making the contract now ...");
 
   // Compile the P2PKH contract to an artifact object
-  const artifact = CashCompiler.compileFile(
+  const artifact = compileFile(
     path.join(__dirname, "yieldContract.cash")
   );
   const provider = new ElectrumNetworkProvider("mainnet");

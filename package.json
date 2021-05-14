@@ -1,23 +1,24 @@
 {
-  "name": "yielf-farming-smart-contract",
-  "version": "1.0.0",
+  "name": "yield-farming-smart-contract",
+  "version": "1.0.1",
   "description": "Smart contract for yield farming on Bitcoin Cash and SLP",
-  "type": "module",
+  "type": "module.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "CashScript - Rosco Kalis, Yield farming - p0oker, update for REBEL SLP by B_S_Z",
   "license": "MPL-2.0",
   "dependencies": {
-    "@bitauth/libauth": "^1.17.2",
-    "axios": "^0.20.0",
+    "@bitauth/libauth": "^1.18.1",
+    "axios": "^0.21.1",
     "bignumber.js": "^9.0.1",
     "bitbox-sdk": "^8.11.2",
-    "bitcore-lib-cash": "^8.22.2",
-    "cashscript": "^0.5.3",
-    "slpjs": "^0.27.8"
-  },
-  "devDependencies": {}
+    "bitcore-lib-cash": "^9.0.0",
+    "cashc": "^0.6.3",
+    "cashscript": "^0.6.3",
+    "dotenv": "^9.0.2",
+    "slpjs": "^0.27.11"
+  }
 }

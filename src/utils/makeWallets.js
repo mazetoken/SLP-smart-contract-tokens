@@ -11,9 +11,7 @@ function makePremiumWallet() {
 
   const premiumPk = bitbox.ECPair.toPublicKey(premiumKeyPair);
   const premiumPkh = bitbox.Crypto.hash160(premiumPk);
-  const premiumBchAddr = bitbox.Address.toCashAddress(
-    premiumHdNode.getAddress()
-  );
+  const premiumBchAddr = bitbox.Address.toCashAddress(premiumHdNode.getAddress());
   const premiumCompressedWif = bitbox.HDNode.toWIF(premiumHdNode);
 
   return {
@@ -30,19 +28,21 @@ function makeAliceWallet() {
   const seedForAlice = bitbox.Mnemonic.toSeed(mnemonicAlice);
 
   const hdNode = bitbox.HDNode.fromSeed(seedForAlice);
-  const aliceHdNode = bitbox.HDNode.derive(hdNode, 0);
+  const aliceHdNode = bitbox.HDNode.derivePath(hdNode, "m/44'/245'/0'/0/0");
   const aliceKeyPair = bitbox.HDNode.toKeyPair(aliceHdNode);
 
   // Derive alice's public key and public key hash
   const alicePk = bitbox.ECPair.toPublicKey(aliceKeyPair);
   const alicePkh = bitbox.Crypto.hash160(alicePk);
   const aliceBchAddr = bitbox.Address.toCashAddress(aliceHdNode.getAddress());
+  const aliceCompressedWif = bitbox.HDNode.toWIF(aliceHdNode);
 
   return {
     alicePk,
     alicePkh,
     aliceBchAddr,
     aliceKeyPair,
+    aliceCompressedWif,
   };
 }
 

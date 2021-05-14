@@ -25,5 +25,4 @@ async function findMintingBaton(utxos, tokenId) {
     throw new Error("mint Baton is not alive");
   }
 }
-
 module.exports = findMintingBaton;

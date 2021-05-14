@@ -3,9 +3,9 @@ const { stringify } = require("@bitauth/libauth");
 const {
   Contract,
   SignatureTemplate,
-  CashCompiler,
   ElectrumNetworkProvider,
 } = require("cashscript");
+const { compileFile } = require ("cashc");
 const path = require("path");
 
 const { makePremiumWallet, makeAliceWallet } = require("./utils/makeWallets");
@@ -15,22 +15,22 @@ const { tokenId } = require("./config");
 (async () => {
   // Initialise BITBOX
   const bitbox = new BITBOX();
-  const DUST = 546;
   const premiumAmount = 1000; // 1000 satoshi investment to premium
-  const hardCodedFee = 1200;
+  const hardCodedFee = 1100;
 
   // this is the premium address, could be your coompany/service bch address
   // which users should pay to this address to mint tokens for themselves
   const { premiumPkh, premiumBchAddr } = makePremiumWallet();
 
   // This is alice address, the hypothethical end-user
-  const { alicePk, alicePkh, aliceBchAddr, aliceKeyPair } = makeAliceWallet();
+  const { alicePk, alicePkh, aliceBchAddr, aliceKeyPair, aliceCompressedWif } = makeAliceWallet();
 
-  console.log("Premium address =>", premiumBchAddr);
   console.log("Alice address =>", aliceBchAddr);
+  console.log("Alice private key WIF =>", aliceCompressedWif);
 
   // Compile the P2PKH contract to an artifact object
-  const artifact = CashCompiler.compileFile(
+  // const artifact = CashCompiler.compileFile(
+  const artifact = compileFile(
     path.join(__dirname, "yieldContract.cash")
   );
 
@@ -54,7 +54,7 @@ const { tokenId } = require("./config");
   const aliceBalance = aliceUtxos.reduce((sum, x) => sum + x.satoshis, 0);
   const totalPayments = premiumAmount + 546 + hardCodedFee;
 
-  console.log("alice balance =>", aliceBalance);
+  console.log("Alice balance =>", aliceBalance);
 
   if (aliceBalance > 10000) {
     console.log(
@@ -63,12 +63,12 @@ const { tokenId } = require("./config");
     return;
   }
 
-  // minimum 1200 should be paid to premium as investment
-  // 1000 will be hard coded tx fee
+  // minimum 1000 should be paid to premium as investment
+  // 1100 will be hard coded tx fee
   // 546 will be used for freshly minted tokens
   if (aliceBalance < totalPayments) {
     console.log(
-      "Alice balance is %s please send some money to alice address",
+      "Alice balance is %s please send 0.00003400 BCH to Alice (your) address and wait a few minutes",
       aliceBalance
     );
     return;
@@ -101,7 +101,7 @@ const { tokenId } = require("./config");
       "MINT", // Action
       `0x${tokenId}`, // Token ID
       "0x03", // Minting baton vout
-      "0x00000000000061A8", // mint 250 new tokens (considering 2 decimals)
+      "0x00000000000186A0", // mint 1000 new tokens (considering 2 decimals)
     ])
     .to(aliceBchAddr, 546) // freshly minted tokens
     .to(premiumBchAddr, premiumAmount)
