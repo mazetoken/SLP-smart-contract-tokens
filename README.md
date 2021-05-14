@@ -1,4 +1,4 @@
-## REBEL (MAZE-REBEL) & VANDALS (MAZE_VANDALS) by [MAZE SLP Token](https://mazetoken.github.io)
+## REBEL (MAZE-REBEL) & VANDALS (MAZE-VANDALS) by [MAZE SLP Token](https://mazetoken.github.io)
 
 REBEL & VANDALS are [cashscript](https://cashscript.org/) smart contract SLP Type-1 tokens. The token minting baton is stored in a contract that has the ability to mint REBEL or VANDALS tokens. This is another way to distribute SLP tokens in a decentralized, permissionless way
 
