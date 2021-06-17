@@ -50,7 +50,7 @@ _*Igonore warnings/errors (keccak ..., secp256k1 ...)_
 
 ### To get into your wallet, where your tokens are:
 
-- create a new Electron Cash SLP standard wallet, go to Wallet tab - Private Keys - import - paste Alice private key - WIF (you have saved before), go to Tokens tab - you should see your tokens there
+- create a new Electron Cash SLP wallet with "Importing Bitcoin Cash addressess or private keys" option (do not create a standard wallet or multi-signature wallet) - use Alice private key (WIF you have saved before), go to Tokens tab - you should see your tokens there
 
 _To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00000600 BCH) to Alice wallet address first and than you can withdraw tokens to another wallet (send tokens and check "Also send BCH")_
 
