@@ -52,7 +52,7 @@ _*Igonore warnings/errors (keccak ..., secp256k1 ...)_
 
 - create a new Electron Cash SLP wallet with "Importing Bitcoin Cash addressess or private keys" option (do not create a standard wallet or multi-signature wallet) - use Alice private key (WIF you have saved before), go to Tokens tab - you should see your tokens there
 
-_To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00000600 BCH) to Alice wallet address first and than you can withdraw tokens to another wallet (send tokens and check "Also send BCH")_
+_To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00000600 BCH) to Alice wallet address first and than you can withdraw tokens to another wallet (send tokens and check "Also send BCH" - send max)_
 
 _*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazeslptoken)_
 
@@ -68,7 +68,7 @@ _*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazesl
 
 - type command: `node src/yieldFarming.js`
 
-_* defaul amount is 1000 SLP tokens with 2 decimals. You can change that in yieldFarming.js line 104 and yieldFarming.cash line 25 (convert amount with decimals to hexadecimals) and then change DECIMALS in .env file_
+_* default amount is 1000 SLP tokens with 2 decimals. You can change that in yieldFarming.js line 104 and yieldFarming.cash line 25 (convert amount decimals to hexadecimals) and then change DECIMALS in .env file; eg. 1000 tokens with 2 decimals is "0x00000000000186A0", 1000 tokens with 8 decimals is "0x000000174876E800", 500 tokens with 4 decimals is "0x00000000004C4B40" etc. You can use https://www.binaryhexconverter.com/decimal-to-hex-converter_
 
 -----------------------------------------------------------------------------------------
 
