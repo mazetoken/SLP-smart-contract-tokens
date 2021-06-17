@@ -16,17 +16,19 @@ The main difference between this repository and the original repository is that 
 
 ## Tutorial (Windows; should work on Linux too):
 
-### To farm/mint REBEL or VANDALS SLP tokens you need to:
+### To farm/mint REBEL or VANDALS SLP tokens:
 
 - install [Nodejs](https://nodejs.org/en/) 14.x LTS
 
-- clone or download and unzip this repository
+- clone or download and unzip this repository (SLP-smart-contract-tokens). You can copy it to your drive C eg. C://SLP-smart-contract-tokens-main
 
-- open unzipped folder, open .env file (in eg. notepad) and type random 12 words passphrase (mnemonic) - the wallet will be generated for you by the script (the derivation path is set to m/44'/245'/0'/0/0)
+- go to https://iancoleman.io/bip39/ to generate BIP39 mnemonic (12 words) and save it
+
+- go to SLP-smart-contract-tokens-main folder, open .env file (in eg. notepad) and type/paste mnemonic you generated (12 words passphrase) - the wallet will be created for you later by the script (the derivation path is set to m/44'/245'/0'/0/0). You can use your own random mnemonic (12 words) but it might not work as expected (however it worked for me)
 
 - change token environment in .env file to mint REBEL or VANDALS
 
-- open a command line (cmd or PowerShell), navigate to the directory (you have downloaded and unzipped) and type commands:
+- open a command line (cmd or PowerShell), navigate to the SLP-smart-contract-tokens-main directory (eg. type one by one: `cd ..` `cd ..` `cd SLP-smart-contract-tokens-main` and type commands:
 
 `npm i`
 
@@ -38,19 +40,19 @@ _*Igonore warnings/errors (keccak ..., secp256k1 ...)_
 
 - send 0.00003400 BCH to Alice BCH address (this is your wallet) from another wallet (do not send more than 0.00003400 BCH at once)
 
-- wait for a few minutes and type/paste the command again:
+- wait for a few minutes (untill the command line is ready) and type/paste the command again:
 
 `node src/yieldFarming.js`
 
-- you will see contract working and 1000 REBEL or VANDALS will be sent to your wallet
+- you will see contract working and 1000 REBEL or VANDALS will be sent to your wallet (wait for a few minutes untill the command line is ready)
 
-- to mint another 1000 tokens wait for a few minutes, type `node src/yieldFarming.js`, send 0.00003400 BCH to Alice BCH address, wait for a few minutes and then type again `node src/yieldFarming.js` (repeat this step to mint more tokens)
+- to mint another 1000 tokens - if the command line is ready - type `node src/yieldFarming.js`, send 0.00003400 BCH to Alice BCH address, wait for a few minutes and then type again `node src/yieldFarming.js` (repeat this step to mint more tokens)
 
-### To get into your wallet, where your tokens are, you can:
+### To get into your wallet, where your tokens are:
 
-- create a new Electron Cash SLP wallet or another wallet that uses m/44'/245'/0'/0/0 derivation path, by importing Alice private key - WIF (you have saved before)
+- create a new Electron Cash SLP standard wallet, go to Wallet tab - Private Keys - import - paste Alice private key - WIF (you have saved before), go to Tokens tab - you should see your tokens there
 
-_To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00000600 BCH) to Alice wallet first and than you can withdraw tokens to another wallet_
+_To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00000600 BCH) to Alice wallet address first and than you can withdraw tokens to another wallet (send tokens and check "Also send BCH")_
 
 _*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazeslptoken)_
 
