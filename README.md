@@ -1,14 +1,26 @@
-## REBEL (MAZE-REBEL) & VANDALS (MAZE-VANDALS) by [MAZE SLP Token](https://mazetoken.github.io)
+## REBEL (MAZE-REBEL), VANDALS (MAZE-VANDALS) & CARTEL (MAZE-CARTEL) SLP trilogy by [MAZE SLP Token](https://mazetoken.github.io). If you need help ask in MAZE [Telegram Group](https://t.me/mazeslptoken)
 
-REBEL & VANDALS are [cashscript](https://cashscript.org/) smart contract SLP Type-1 tokens. The token minting baton is stored in a contract that has the ability to mint REBEL or VANDALS tokens. This is another way to distribute SLP tokens in a decentralized, permissionless way
+REBEL, VANDALS and CARTEL are [cashscript](https://cashscript.org/) smart contract [SLP Type 1](https://slp.dev/specs/slp-token-type-1/) tokens. The token minting baton is stored in a contract that has the ability to mint REBEL, VANDALS or CARTEL tokens. This is another way to distribute SLP tokens in a decentralized, permissionless way
 
-REBEL token id: 4b42d3f9c9aa48b78efc1fc05d4c92314352409d387880e5803358522a33e968
+_*This is not an investment advice or recommendation_
 
-VANDALS token id: 30d05b44dc304db9cf56a6138c1dfdbb24f7c8d9e26c87a8079acc461e61b684
+REBEL, VANDALS and CARTEL are tokens of appreciation, loyalty or reward tokens or ...
 
-Farm/mint amount: 1000 REBEL or 1000 VANDALS
+REBEL token id: [4b42d3f9c9aa48b78efc1fc05d4c92314352409d387880e5803358522a33e968](https://simpleledger.info/token/4b42d3f9c9aa48b78efc1fc05d4c92314352409d387880e5803358522a33e968)
 
-_This repository is forked from https://github.com/p0o/yield-farming-bch-smart-contract and prepared to mint REBEL and VANDALS_
+![rebel](img/Rebel320.png)
+
+VANDALS token id: [30d05b44dc304db9cf56a6138c1dfdbb24f7c8d9e26c87a8079acc461e61b684](https://simpleledger.info/token/30d05b44dc304db9cf56a6138c1dfdbb24f7c8d9e26c87a8079acc461e61b684)
+
+![VANDALS](img/Vandals320.png)
+
+CARTEL token id: [7b5d1aa0918d96540997db8313e3b06231bc6fd84a020c282f9c774c7729abf9](https://simpleledger.info/token/7b5d1aa0918d96540997db8313e3b06231bc6fd84a020c282f9c774c7729abf9)
+
+![CARTEL](img/Cartel320.png)
+
+Farm/mint amount: 1000 REBEL, 1000 VANDALS or 1000 CARTEL
+
+_This repository is forked from https://github.com/p0o/yield-farming-bch-smart-contract and prepared to mint REBEL, VANDALS or CARTEL_
 
 _Read the article about "Yield Farming Bitcoin Cash Contract" by [p0oker](https://read.cash/@p0oker/yield-farming-in-bitcoin-cash-a-practical-guide-2eecbc74)_
 
@@ -16,7 +28,7 @@ The main difference between this repository and the original repository is that 
 
 ## Tutorial (Windows; should work on Linux too):
 
-### To farm/mint REBEL or VANDALS SLP tokens:
+### To farm/mint REBEL, VANDALS or CARTEL SLP tokens:
 
 - install [Nodejs](https://nodejs.org/en/) 14.x LTS
 
@@ -26,7 +38,7 @@ The main difference between this repository and the original repository is that 
 
 - go to SLP-smart-contract-tokens-main folder, open .env file (in eg. notepad) and type/paste mnemonic you generated (12 words passphrase) - the wallet will be created for you later by the script (the derivation path is set to m/44'/245'/0'/0/0). You can use your own random mnemonic (12 words) but it might not work as expected (however it worked for me)
 
-- change token environment in .env file to mint REBEL or VANDALS
+- change token environment in .env file to mint REBEL, VANDALS or CARTEL
 
 - open a command line (cmd or PowerShell), navigate to the SLP-smart-contract-tokens-main directory (eg. type one by one: `cd ..` `cd ..` `cd SLP-smart-contract-tokens-main` and type commands:
 
@@ -56,13 +68,15 @@ _To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00000600 BCH
 
 _*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazeslptoken)_
 
-### To create a token like REBEL or VANDALS:
+### To create a token like REBEL, VANDALS or CARTEL:
 
 - remove token id from .env file (leave it empty "")
 
 - set your token environment: name, symbol and your website url
 
 - type command: `node src/genesis.js`
+
+_*Send some BCH (eg. 0.00003400) to the funding address if asked_
 
 - you will get token id - paste it to .env tokenId field
 
