@@ -1,4 +1,4 @@
-## REBEL (MAZE-REBEL), VANDALS (MAZE-VANDALS) & CARTEL (MAZE-CARTEL) SLP trilogy by [MAZE SLP Token](https://mazetoken.github.io). If you need help ask in MAZE [Telegram Group](https://t.me/mazeslptoken)
+## REBEL (MAZE-REBEL), VANDALS (MAZE-VANDALS) & CARTEL (MAZE-CARTEL) SLP trilogy by [MAZE SLP Token](https://mazetoken.github.io)
 
 REBEL, VANDALS and CARTEL are [cashscript](https://cashscript.org/) smart contract [SLP Type 1](https://slp.dev/specs/slp-token-type-1/) tokens. The token minting baton is stored in a contract that has the ability to mint REBEL, VANDALS or CARTEL tokens. This is another way to distribute SLP tokens in a decentralized, permissionless way
 
@@ -56,7 +56,7 @@ _*Igonore warnings/errors (keccak ..., secp256k1 ...)_
 
 `node src/yieldFarming.js`
 
-- you will see contract working and 1000 REBEL or VANDALS will be sent to your wallet (wait for a few minutes untill the command line is ready)
+- you will see contract working and 1000 REBEL, VANDALS or CARTEL will be sent to your wallet (wait for a few minutes untill the command line is ready)
 
 - to mint another 1000 tokens - if the command line is ready - type `node src/yieldFarming.js`, send 0.00003400 BCH to Alice BCH address, wait for a few minutes and then type again `node src/yieldFarming.js` (repeat this step to mint more tokens)
 
