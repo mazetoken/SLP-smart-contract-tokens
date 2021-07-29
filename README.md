@@ -4,7 +4,7 @@ REBEL, VANDALS and CARTEL are [cashscript](https://cashscript.org/) smart contra
 
 _*This is not an investment advice or recommendation_
 
-REBEL, VANDALS and CARTEL are tokens of appreciation, loyalty or reward tokens or ...
+REBEL, VANDALS and CARTEL are tokens of appreciation, loyalty or reward tokens and can be sent without BCH blockchain fee with [Post Office](https://mazepostage.herokuapp.com) server enabled
 
 REBEL token id: [4b42d3f9c9aa48b78efc1fc05d4c92314352409d387880e5803358522a33e968](https://simpleledger.info/token/4b42d3f9c9aa48b78efc1fc05d4c92314352409d387880e5803358522a33e968)
 
@@ -24,7 +24,7 @@ _This repository is forked from https://github.com/p0o/yield-farming-bch-smart-c
 
 _Read the article about "Yield Farming Bitcoin Cash Contract" by [p0oker](https://read.cash/@p0oker/yield-farming-in-bitcoin-cash-a-practical-guide-2eecbc74)_
 
-The main difference between this repository and the original repository is that we use use nodejs CJS Loader instead ES Module Loader, wallet derivation path is changed, some npm packages (eg. cashscript) and REST API are updated too
+The main difference between this repository and the original repository is that we use use nodejs CJS Loader instead ES Module Loader, wallet derivation path is changed, some npm packages (e.g. cashscript) and REST API are updated too
 
 ## Tutorial (Windows; should work on Linux too):
 
@@ -34,13 +34,13 @@ The main difference between this repository and the original repository is that 
 
 - clone or download and unzip this repository (SLP-smart-contract-tokens). You can copy it to your drive C eg. C://SLP-smart-contract-tokens-main
 
-- go to https://iancoleman.io/bip39/ to generate BIP39 mnemonic (12 words) and save it
+- go to https://iancoleman.io/bip39/ to generate BIP39 mnemonic (12 words) and save it. You can use your own random mnemonic (12 words) but it might not work as expected (however it worked for me)
 
-- go to SLP-smart-contract-tokens-main folder, open .env file (in eg. notepad) and type/paste mnemonic you generated (12 words passphrase) - the wallet will be created for you later by the script (the derivation path is set to m/44'/245'/0'/0/0). You can use your own random mnemonic (12 words) but it might not work as expected (however it worked for me)
+- go to SLP-smart-contract-tokens-main folder, open .env file (in e.g. notepad) and type/paste mnemonic you generated (12 words passphrase) - the wallet will be created for you later by the script (the derivation path is set to m/44'/245'/0'/0/0)
 
 - change token environment in .env file to mint REBEL, VANDALS or CARTEL
 
-- open a command line (cmd or PowerShell), navigate to the SLP-smart-contract-tokens-main directory (eg. type one by one: `cd ..` `cd ..` `cd SLP-smart-contract-tokens-main` and type commands:
+- open a command line (PowerShell or Linux Terminal), navigate to the SLP-smart-contract-tokens-main directory (e.g. type one by one: `cd ..` `cd ..` `cd SLP-smart-contract-tokens-main` and type commands:
 
 `npm i`
 
@@ -62,9 +62,13 @@ _*Igonore warnings/errors (keccak ..., secp256k1 ...)_
 
 ### To get into your wallet, where your tokens are:
 
-- create a new Electron Cash SLP wallet with "Importing Bitcoin Cash addressess or private keys" option (do not create a standard wallet or multi-signature wallet) - use Alice private key (WIF you have saved before), go to Tokens tab - you should see your tokens there
+- create a new [Electron Cash SLP wallet](https://github.com/simpleledger/Electron-Cash-SLP/releases/download/3.6.7-dev6/Electron-Cash-SLP-3.6.7-dev6-setup.exe) with "Importing Bitcoin Cash addressess or private keys" option (do not create a standard wallet or multi-signature wallet) - use Alice private key (WIF you have saved before), go to Tokens tab - you should see your tokens there
 
-_To send REBEL tokens from Alice (your) wallet send some BCH (eg. 0.00000600 BCH) to Alice wallet address first and than you can withdraw tokens to another wallet (send tokens and check "Also send BCH" - send max)_
+To send REBEL tokens from Alice (your) wallet:
+
+- method 1: send some BCH (e.g. 0.00000600 BCH) to Alice wallet address first and than you can send tokens to another SLP wallet (send tokens tab and check "Also send BCH" - send max)
+
+- method 2: use my [Post Office server](https://github.com/mazetoken/slp-post-office-server) to send minted tokens without BCH in Alice (your) wallet
 
 _*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazeslptoken)_
 
