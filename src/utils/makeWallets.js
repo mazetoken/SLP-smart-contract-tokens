@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const BITBOX = require("bitbox-sdk").BITBOX;
 const { mnemonicAlice, mnemonicPremium } = require("../config");
 const bitbox = new BITBOX();
@@ -12,23 +14,16 @@ function makePremiumWallet() {
   const premiumPk = bitbox.ECPair.toPublicKey(premiumKeyPair);
   const premiumPkh = bitbox.Crypto.hash160(premiumPk);
   const premiumBchAddr = bitbox.Address.toCashAddress(premiumHdNode.getAddress());
-  const premiumCompressedWif = bitbox.HDNode.toWIF(premiumHdNode);
 
-  return {
-    premiumPk,
-    premiumPkh,
-    premiumBchAddr,
-    premiumHdNode,
-    premiumKeyPair,
-    premiumCompressedWif,
-  };
+  return { premiumPk, premiumPkh, premiumBchAddr, premiumHdNode, premiumKeyPair };
 }
 
 function makeAliceWallet() {
   const seedForAlice = bitbox.Mnemonic.toSeed(mnemonicAlice);
 
   const hdNode = bitbox.HDNode.fromSeed(seedForAlice);
-  const aliceHdNode = bitbox.HDNode.derivePath(hdNode, "m/44'/245'/0'/0/0");
+  // const aliceHdNode = bitbox.HDNode.derivePath(hdNode, "m/44'/245'/0'/0/0");
+  const aliceHdNode = bitbox.HDNode.derivePath(hdNode, process.env.DERIVATION_PATH);
   const aliceKeyPair = bitbox.HDNode.toKeyPair(aliceHdNode);
 
   // Derive alice's public key and public key hash
@@ -37,13 +32,7 @@ function makeAliceWallet() {
   const aliceBchAddr = bitbox.Address.toCashAddress(aliceHdNode.getAddress());
   const aliceCompressedWif = bitbox.HDNode.toWIF(aliceHdNode);
 
-  return {
-    alicePk,
-    alicePkh,
-    aliceBchAddr,
-    aliceKeyPair,
-    aliceCompressedWif,
-  };
+  return { alicePk, alicePkh, aliceBchAddr, aliceKeyPair, aliceCompressedWif };
 }
 
 exports.makePremiumWallet = makePremiumWallet;

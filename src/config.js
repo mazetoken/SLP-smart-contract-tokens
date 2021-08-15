@@ -1,6 +1,7 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
-// Premium is the address that create the SLP initially
+// insert your own mnemonics!
+// Premium is the address that create the SLP initially and gets paid for every mint
 const mnemonicPremium = "cowboy spaceship lens vampire freak decrypt question business halos mminer achieve visit";
 
 // Alice is the end user

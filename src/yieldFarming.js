@@ -1,13 +1,8 @@
 const BITBOX = require("bitbox-sdk").BITBOX;
 const { stringify } = require("@bitauth/libauth");
-const {
-  Contract,
-  SignatureTemplate,
-  ElectrumNetworkProvider,
-} = require("cashscript");
+const { Contract, SignatureTemplate, ElectrumNetworkProvider } = require("cashscript");
 const { compileFile } = require ("cashc");
 const path = require("path");
-
 const { makePremiumWallet, makeAliceWallet } = require("./utils/makeWallets");
 const findMintingBaton = require("./utils/findMintingBaton");
 const { tokenId } = require("./config");
@@ -102,6 +97,7 @@ const { tokenId } = require("./config");
       `0x${tokenId}`, // Token ID
       "0x03", // Minting baton vout
       "0x00000000000186A0", // mint 1000 new tokens (considering 2 decimals)
+      // "0x00000002540BE400", // mint 100 tokens (considering 8 decimals)
     ])
     .to(aliceBchAddr, 546) // freshly minted tokens
     .to(premiumBchAddr, premiumAmount)

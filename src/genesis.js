@@ -1,30 +1,17 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
-const BITBOXSDK = require("bitbox-sdk");
+const BITBOX = require("bitbox-sdk").BITBOX;
 const BigNumber = require("bignumber.js");
 const slpjs = require("slpjs");
 const { stringify, opFromAltStack, hexToBin } = require("@bitauth/libauth");
-const {
-  Contract,
-  SignatureTemplate,
-  Transaction,
-  ElectrumNetworkProvider,
-} = require("cashscript");
-const { compileFile } = require ("cashc");
+const { Contract, SignatureTemplate, Transaction, ElectrumNetworkProvider } = require("cashscript");
+const { compileFile } = require("cashc");
 const path = require("path");
 const { makePremiumWallet } = require("./utils/makeWallets");
 
-// FOR MAINNET UNCOMMENT
-const BITBOX = new BITBOXSDK.BITBOX({ restURL: process.env.REST_URL });
+const bitbox = new BITBOX({ restURL: process.env.REST_URL });
 
-const {
-  premiumBchAddr,
-  premiumPkh,
-  premiumCompressedWif,
-  premiumPk,
-  premiumKeyPair,
-} = makePremiumWallet();
-
+const { premiumBchAddr, premiumPkh, premiumCompressedWif, premiumPk, premiumKeyPair } = makePremiumWallet();
 const fundingAddress = slpjs.Utils.toSlpAddress(premiumBchAddr);
 const fundingWif = premiumCompressedWif;
 const tokenReceiverAddress = fundingAddress;
@@ -32,7 +19,8 @@ const bchChangeReceiverAddress = premiumBchAddr;
 // temporarily keeping the minting baton in our address so we can get the Token Id after genesis
 let batonReceiverAddress = fundingAddress;
 
-const bitboxNetwork = new slpjs.BitboxNetwork(BITBOX);
+// const bitboxNetwork = new slpjs.BitboxNetwork(BITBOX);
+const bitboxNetwork = new slpjs.BitboxNetwork(bitbox);
 
 let balances;
 (async function () {

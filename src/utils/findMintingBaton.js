@@ -1,5 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const axios = require("axios");
-
 async function findMintingBaton(utxos, tokenId) {
   const query = {
     v: 3,
@@ -9,7 +10,8 @@ async function findMintingBaton(utxos, tokenId) {
     },
   };
 
-  const slpDbUrl = "https://slpdb.fountainhead.cash/q/";
+  // const slpDbUrl = "https://slpdb.fountainhead.cash/q/";
+  const slpDbUrl = process.env.SLPDB_URL;
 
   const { data } = await axios.get(
     slpDbUrl + Buffer.from(JSON.stringify(query)).toString("base64")

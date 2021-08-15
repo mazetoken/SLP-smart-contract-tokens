@@ -22,7 +22,8 @@ contract Yield(bytes20 premiumPkh, bytes tokenIdHex) {
         bytes('MINT'),
         tokenIdHex,
         0x03, // minting baton vout (very important to avoid burning the baton)
-        0x00000000000186A0 // 1000 SLPs (considering 2 decimals)
+        0x00000000000186A0 // mint 1000 new tokens (considering 2 decimals)
+        // 0x00000002540BE400 // 100 tokens (considering 8 decimals)
       ]);
 
       // minted token sent back to the farmer
