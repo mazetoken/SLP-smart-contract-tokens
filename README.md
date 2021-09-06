@@ -76,7 +76,7 @@ To send REBEL tokens from Alice (your) wallet:
 
 - method 2: use my [Post Office server](https://github.com/mazetoken/slp-post-office-server) to send minted tokens without BCH in Alice (your) wallet
 
-_*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazeslptoken)_
+_*If you need any help go to MAZE SLP Token [Telegram Group](https://t.me/mazetokens)_
 
 -----------------------------------------------------------------------------------------
 
